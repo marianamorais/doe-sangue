@@ -133,9 +133,9 @@ main .donors {
 }
 
 .donor p {
- margin-top: auto;
- padding: 16px;
- font-size: 14px;
+  margin-top: 24px;
+  margin-bottom: 64px;
+  font-size: 14px;
 }
 
 /* Footer */
