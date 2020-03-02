@@ -8,6 +8,16 @@ server.use(express.static('public'));
 // Habilitar body do formulario
 server.use(express.urlencoded( { extended: true} ));
 
+// Configurar conexao com o BD
+const Pool = require ('pg').Pool
+const db = new Pool( {
+ user: 'postgres',
+ password: '',
+ host: 'localhost',
+ port: 5432,
+ database: 'doe'
+});
+
 // configurando a template engine
 const nunjucks = require("nunjucks");
 nunjucks.configure("./", {
@@ -46,11 +56,16 @@ server.post("/", function(req, res) {
  const email = req.body.email
  const blood = req.body.blood
 
- // Colocar valores dentro do array (coleção)
- donors.push({
-  name: name,
-  blood: blood,
- });
+ // Colocar valores dentro do BD
+ // donors.push({
+ //  name: name,
+ //  blood: blood,
+ // });
+ const query = `
+ INSERT INTO donors ("name", "email", "blood") 
+ VALUES ('$') `
+
+ db.query (query, [name, email, blood])
 
  return res.redirect("/");
 
