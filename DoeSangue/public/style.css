@@ -12,12 +12,10 @@ body {
  display: flex;
  flex-direction: column;
  height: 100vh;
- /* Fonte */
  font-family: 'Roboto', sans-serif;
  background-color: #f9f9f9;
 }
 
-/* Titulos */
 header h1, main h2 {
  margin-bottom: 70px;
 }
@@ -59,6 +57,7 @@ header button {
  background-color: #ff4f4f;
  color: #fff;
  font-weight: bold;
+ cursor: pointer;
 }
 
 .logo {
@@ -83,6 +82,7 @@ section.form {
 
 form button {
  font-weight: bold;
+ cursor: pointer;
 }
 
 form input,
