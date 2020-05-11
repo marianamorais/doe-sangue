@@ -98,4 +98,4 @@ localhost:3000
 
 ## :memo: Licence
 
-#### MIT Licence. See the file LICENSE for more details.
+#### MIT Licence. See the file [license](./LICENSE) for more details.
